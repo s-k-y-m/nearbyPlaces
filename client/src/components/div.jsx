@@ -3,43 +3,51 @@ import React from 'react';
 var WhatIsThis = ({ restaurant }) => {
   return (
     <div className="container">
-      <div className="imgDiv">
-        <img className="image" src={restaurant.picture[0]} />
-      </div>
-      <div className="infoDiv">
-        <div>{restaurant.name}</div>
-        <div>
-          {restaurant.typeOfFood}
-          {restaurant.location}
-          {restaurant.expense}
+      <div className="testing">
+        <div className="imgDiv">
+          <svg
+            fill="#000000"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+          <img className="image" src={restaurant.picture[0]} />
+          <svg
+            fill="#000000"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="right-button"
+          >
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
         </div>
-        <div>
-          {restaurant.zagat.info}
-          {restaurant.zagat.rating}
+        <div className="infoDiv">
+          <div className="title">{restaurant.name}</div>
+          <div className="summary">
+            {restaurant.typeOfFood}
+            {restaurant.location}
+            {restaurant.expense}
+          </div>
+          <div className="rating">
+            <img
+              src="https://www.zagat.com/assets/img/z-logo-icon-red.svg"
+              className="zagat-icon"
+            />
+            {restaurant.zagat.info}
+            {restaurant.zagat.rating}
+          </div>
+          <div className="description">{restaurant.description}</div>
         </div>
-        <div>{restaurant.description}</div>
       </div>
     </div>
   );
 };
 
 export default WhatIsThis;
-// let fakeData = [
-//   {
-//     id: 1,
-//     name: 'MOURAD',
-//     location: 'SoMa',
-//     expense: 4,
-//     zagat: {
-//       info: 'FOOD',
-//       rating: 4.6
-//     },
-//     typeOfFood: 'Middle Eastern',
-//     rating: 4.6,
-//     description:
-//       'Moroccan fine dining with a California twist & extensive wine options in a swanky, modern setting.',
-//     picture: [
-//       'https://zagat-photos.imgix.net/ChIJg6QBP32AhYARNh3xlLGG46g/82cf52f25b1e3f6161cb9df76122ddd0.jpg?fit=crop&crop=center&max-w=400&max-h=400&q=75&fm=jpg&auto=format',
-//       'https://zagat-photos.imgix.net/ChIJg6QBP32AhYARNh3xlLGG46g/377b5211809835908b95352762ed46dd.jpg?fit=crop&crop=center&max-w=400&max-h=400&q=75&fm=jpg&auto=format'
-//     ]
-//   },
