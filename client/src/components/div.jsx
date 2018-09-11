@@ -11,6 +11,7 @@ var WhatIsThis = ({ restaurant, onLeftClick, onRightClick, index }) => {
             viewBox="0 0 24 24"
             width="24"
             xmlns="http://www.w3.org/2000/svg"
+            className="left-button"
             onClick={() => {
               onLeftClick(restaurant);
             }}
@@ -35,19 +36,29 @@ var WhatIsThis = ({ restaurant, onLeftClick, onRightClick, index }) => {
           </svg>
         </div>
         <div className="infoDiv">
-          <div className="title">{restaurant.name}</div>
-          <div className="summary">
-            {restaurant.typeOfFood}
-            {restaurant.location}
-            {restaurant.expense}
+          <div>
+            <span className="title">{restaurant.name}</span>
           </div>
-          <div className="rating">
-            <img
-              src="https://www.zagat.com/assets/img/z-logo-icon-red.svg"
-              className="zagat-icon"
-            />
-            {restaurant.zagat.info}
-            {restaurant.zagat.rating}
+          <div className="summary">
+            {restaurant.typeOfFood ? restaurant.typeOfFood + ' · ' : null}
+            {restaurant.location + ' · '}
+            {'$'.repeat(restaurant.expense)}
+          </div>
+          <div className="rating-group">
+            <div className="rating">
+              <img
+                src="https://www.zagat.com/assets/img/z-logo-icon-red.svg"
+                className="zagat-icon"
+              />
+              <span className="rating-label">{' ' + restaurant.zagat.info}</span>
+              <span className="rating-value">{' ' + restaurant.zagat.rating}</span>
+            </div>
+            <span className="ratings-divider" />
+            <div className="google-rating">
+              <img src="https://www.zagat.com/assets/img/google_icon.svg" className="google-icon" />
+              <span>{' ' + restaurant.rating}</span>
+              <span className="stars">{' ' + '★'.repeat(Math.ceil(restaurant.rating))}</span>
+            </div>
           </div>
           <div className="description">{restaurant.description}</div>
         </div>

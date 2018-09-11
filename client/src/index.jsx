@@ -25,6 +25,7 @@ let fakeData = [
   {
     id: 2,
     name: "HENRY'S HUNAN",
+    location: 'SoMa',
     expense: 1,
     zagat: {
       info: 'FOOD',

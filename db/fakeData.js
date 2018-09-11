@@ -22,6 +22,7 @@ let data = [
     id: 2,
     name: "HENRY'S HUNAN",
     expense: 1,
+    location: 'SoMa',
     zagat: {
       info: 'FOOD',
       rating: 4.3
