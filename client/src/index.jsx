@@ -204,6 +204,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <div id="related-start">
+          <span id="original-restaurant">More Places Near Trou Normand</span>
+        </div>
         {this.state.restaurants.map((restaurant, index) => {
           return (
             <WhatIsThis
