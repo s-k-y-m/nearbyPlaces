@@ -22,6 +22,7 @@ let data = [
     id: 2,
     name: "HENRY'S HUNAN",
     expense: 1,
+    location: 'SoMa',
     zagat: {
       info: 'FOOD',
       rating: 4.3
@@ -98,15 +99,15 @@ let data = [
       'Local draw for Four Barrel Coffee, Dynamo Donuts & other cafe fare in a bright, wood-decked space.',
     picture: [
       'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-2.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-3.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-4.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-5.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-6.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-7.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-8.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-9.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-10.amazonaws.com/nearbyyontek/coffee1.jpg'
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee2.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee3.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee4.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee5.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee6.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee7.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee8.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee9.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee10.jpg'
     ]
   },
   {

@@ -25,6 +25,7 @@ let fakeData = [
   {
     id: 2,
     name: "HENRY'S HUNAN",
+    location: 'SoMa',
     expense: 1,
     zagat: {
       info: 'FOOD',
@@ -102,15 +103,15 @@ let fakeData = [
       'Local draw for Four Barrel Coffee, Dynamo Donuts & other cafe fare in a bright, wood-decked space.',
     picture: [
       'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-2.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-3.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-4.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-5.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-6.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-7.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-8.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-9.amazonaws.com/nearbyyontek/coffee1.jpg',
-      'https://s3-us-west-10.amazonaws.com/nearbyyontek/coffee1.jpg'
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee2.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee3.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee4.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee5.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee6.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee7.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee8.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee9.jpg',
+      'https://s3-us-west-1.amazonaws.com/nearbyyontek/coffee10.jpg'
     ]
   },
   {
@@ -144,7 +145,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: fakeData
+      restaurants: fakeData,
+      index: {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+      }
     };
   }
   componentDidMount() {
@@ -161,11 +170,53 @@ class App extends React.Component {
         console.log(error);
       });
   }
+
+  leftClickHandler(restaurant) {
+    let length = restaurant.picture.length - 1;
+    let id = restaurant.id;
+    let index = this.state.index;
+
+    if (this.state.index[id] === 0) {
+      index[id] = length;
+    } else {
+      index[id]--;
+    }
+    this.setState({
+      index: index
+    });
+  }
+
+  rightClickHandler(restaurant) {
+    let length = restaurant.picture.length - 1;
+    let id = restaurant.id;
+    let index = this.state.index;
+
+    if (this.state.index[id] === length) {
+      index[id] = 0;
+    } else {
+      index[id]++;
+    }
+    this.setState({
+      index: index
+    });
+  }
+
   render() {
     return (
       <div>
+        <div id="related-start">
+          <span id="original-restaurant">More Places Near Trou Normand</span>
+        </div>
         {this.state.restaurants.map((restaurant, index) => {
-          return <WhatIsThis key={index} restaurant={restaurant} />;
+          return (
+            <WhatIsThis
+              key={index}
+              restaurant={restaurant}
+              onLeftClick={this.leftClickHandler.bind(this)}
+              onRightClick={this.rightClickHandler.bind(this)}
+              index={this.state.index[index + 1]}
+            />
+          );
         })}
       </div>
     );

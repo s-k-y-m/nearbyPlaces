@@ -1,50 +1,18 @@
 import React from 'react';
+import Image from './image.jsx';
+import Info from './info.jsx';
 
-var WhatIsThis = ({ restaurant }) => {
+var WhatIsThis = ({ restaurant, onLeftClick, onRightClick, index }) => {
   return (
     <div className="container">
       <div className="testing">
-        <div className="imgDiv">
-          <svg
-            fill="#000000"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-            <path d="M0 0h24v24H0z" fill="none" />
-          </svg>
-          <img className="image" src={restaurant.picture[0]} />
-          <svg
-            fill="#000000"
-            height="24"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-            className="right-button"
-          >
-            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-            <path d="M0 0h24v24H0z" fill="none" />
-          </svg>
-        </div>
-        <div className="infoDiv">
-          <div className="title">{restaurant.name}</div>
-          <div className="summary">
-            {restaurant.typeOfFood}
-            {restaurant.location}
-            {restaurant.expense}
-          </div>
-          <div className="rating">
-            <img
-              src="https://www.zagat.com/assets/img/z-logo-icon-red.svg"
-              className="zagat-icon"
-            />
-            {restaurant.zagat.info}
-            {restaurant.zagat.rating}
-          </div>
-          <div className="description">{restaurant.description}</div>
-        </div>
+        <Image
+          restaurant={restaurant}
+          onLeftClick={onLeftClick}
+          onRightClick={onRightClick}
+          index={index}
+        />
+        <Info restaurant={restaurant} />
       </div>
     </div>
   );
