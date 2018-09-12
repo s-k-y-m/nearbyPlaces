@@ -10,7 +10,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
-    "build": "node db/fakeData.js"
+    "build": "node db/fakeData.js",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
@@ -30,6 +31,9 @@
   },
   "devDependencies": {
     "axios": "^0.18.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
@@ -38,6 +42,10 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
-    "prettier": "^1.14.2"
+    "jest": "^23.6.0",
+    "prettier": "^1.14.2",
+    "puppeteer": "^1.8.0",
+    "regenerator-runtime": "^0.12.1",
+    "sinon": "^6.3.1"
   }
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import Image from './image.jsx';
 import Info from './info.jsx';
 
-var WhatIsThis = ({ restaurant, onLeftClick, onRightClick, index }) => {
+var Container = ({ restaurant, onLeftClick, onRightClick, index }) => {
   return (
     <div className="container">
-      <div className="testing">
+      <div className="wrapper">
         <Image
           restaurant={restaurant}
           onLeftClick={onLeftClick}
@@ -18,4 +18,4 @@ var WhatIsThis = ({ restaurant, onLeftClick, onRightClick, index }) => {
   );
 };
 
-export default WhatIsThis;
+export default Container;
