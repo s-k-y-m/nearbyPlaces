@@ -85,3 +85,15 @@ describe('Check the divs', () => {
     expect(data.length / 6).toEqual(2);
   });
 });
+
+describe('Check the title', () => {
+  beforeEach(async () => {
+    await page.goto(pageUrl, { waitUntil: 'networkidle2' });
+  });
+
+  test('Current restaurant name is correct', async () => {
+    var div = '#related-start span';
+    const title = await page.$eval(div, e => e.textContent);
+    expect(title).toEqual('More Places Near Trou Normand');
+  });
+});
