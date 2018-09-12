@@ -12,6 +12,24 @@ body {
   background-color: #f1f1f2;
 }
 
+#app {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1480px;
+}
+
+@media (min-width: 960px) {
+  #app {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 959px) and (min-width: 600px) {
+  #app {
+    padding-left: 32px;
+  }
+}
+
 /* Start Here */
 #related-start {
   box-sizing: border-box;
@@ -66,7 +84,7 @@ body {
   width: 100%;
   margin-right: 40px;
   margin-bottom: 40px;
-  flex: 1 1;
+  /* flex: 1 1; */
 }
 
 .container:hover .title {
@@ -83,7 +101,7 @@ body {
 }
 
 /* Wraper */
-.testing {
+.wrapper {
   display: flex;
   flex-direction: row;
   box-sizing: content-box;

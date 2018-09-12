@@ -5,7 +5,7 @@ import Info from './info.jsx';
 var WhatIsThis = ({ restaurant, onLeftClick, onRightClick, index }) => {
   return (
     <div className="container">
-      <div className="testing">
+      <div className="wrapper">
         <Image
           restaurant={restaurant}
           onLeftClick={onLeftClick}

@@ -3,7 +3,7 @@ import React from 'react';
 var Info = ({ restaurant }) => {
   return (
     <div className="infoDiv">
-      <div>
+      <div className="titleDiv">
         <span className="title">{restaurant.name}</span>
       </div>
       <div className="summary">
