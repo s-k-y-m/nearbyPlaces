@@ -1,0 +1,265 @@
+@font-face {
+  font-family: 'Calibre-Regular';
+  src: url('./fonts/Calibre-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Calibre-Medium';
+  src: url('./fonts/CalibreWeb-Medium.woff') format('woff');
+}
+
+body {
+  background-color: #f1f1f2;
+}
+
+.wholeApp {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1480px;
+}
+
+@media (min-width: 960px) {
+  .wholeAapp {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 959px) and (min-width: 600px) {
+  .wholeApp {
+    padding-left: 32px;
+  }
+}
+
+/* Start Here */
+.relatedStart {
+  box-sizing: border-box;
+  display: flex;
+}
+
+@media (max-width: 599px) {
+  .relatedStart {
+    background-color: white;
+    height: 48px;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 599px) {
+  .originalRestaurant {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    letter-spacing: 0.013em;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 600px) {
+  .relatedStart {
+    border-top: 1px #101820 solid;
+    margin: 0 32px 25px 0;
+    padding-top: 6px;
+  }
+}
+
+.originalRestaurant {
+  font-size: 22px;
+  font-family: 'Calibre-Regular';
+  letter-spacing: 0.004em;
+  line-height: 32px;
+  font-weight: 400;
+  color: #101820;
+}
+
+/* Each Container */
+.container {
+  background: white;
+  min-height: 218px;
+  color: #101820;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  /* flex: 1 1; */
+}
+
+.container:hover .title {
+  border-bottom: 1px solid #b70038;
+}
+
+@media (min-width: 960px) {
+  .container {
+    display: inline-block;
+    vertical-align: top;
+    width: 46%;
+    /* TODO: change width to 50% */
+  }
+}
+
+/* Wraper */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  box-sizing: content-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image Component */
+.imgDiv {
+  flex: 1 1 100%;
+  max-width: 40%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.image {
+  width: 100%;
+  min-height: 218px;
+  height: 100%;
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100px;
+}
+
+.imgDiv svg {
+  fill: white;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 20px);
+}
+
+.imgDiv svg:hover {
+  background: black;
+  border-radius: 50%;
+}
+
+.rightButton {
+  right: 0px;
+  overflow: hidden;
+}
+
+.leftButton {
+  left: 0px;
+  overflow: hidden;
+}
+
+/* Info Component */
+.infoDiv {
+  padding: 20px 24px;
+  max-width: 60%;
+  max-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 100%;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+}
+
+.infoDiv,
+.imgDiv {
+  height: 100%;
+  width: auto;
+  position: relative;
+}
+
+.title {
+  color: #101820;
+  font: 18px/20px 'Calibre-Medium';
+  letter-spacing: 0.086em;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+.summary {
+  color: #656666;
+  font: 15px/24px 'Calibre-Regular';
+  letter-spacing: 0.013em;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.rating {
+  color: #101820;
+  font: 14px/20px 'Calibre-Medium';
+  letter-spacing: 0.061em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.rating img,
+.googleRating img {
+  bottom: 1px;
+  height: 20px;
+  padding-right: 4px;
+  position: relative;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.ratingValue {
+  color: #b70038;
+}
+
+.ratingsDivider {
+  border-right: 1px solid #d0d2d3;
+  height: 20px;
+  margin: 0 10px;
+  width: 1px;
+}
+
+.googleRating {
+  color: #101820;
+  font: 14px/20px 'Calibre-Regular';
+  letter-spacing: 0.086em;
+  display: inline-block;
+}
+
+.stars {
+  font: 12px/16px 'Calibre-Regular';
+}
+.zagatIcon {
+  bottom: 1px;
+  height: 20px;
+  padding-right: 4px;
+  position: relative;
+  vertical-align: middle;
+  width: 20px;
+}
+
+.googleIcon {
+  height: 16px;
+  position: relative;
+  top: 3px;
+  width: 16px;
+}
+
+.description {
+  padding-top: 3px;
+  font: 15px/20px 'Calibre-Regular';
+  letter-spacing: 0.013em;
+}
+
+@media (max-width: 959px) {
+  .description {
+    font-size: 14px;
+  }
+}

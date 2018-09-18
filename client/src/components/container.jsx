@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from './image.jsx';
 import Info from './info.jsx';
+import styles from '../styles.css';
 
 var Container = ({ restaurant, onLeftClick, onRightClick, index }) => {
   return (
-    <div className="container">
-      <div className="wrapper">
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
         <Image
           restaurant={restaurant}
           onLeftClick={onLeftClick}
