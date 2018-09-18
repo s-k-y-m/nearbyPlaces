@@ -1,7 +1,7 @@
 import React from 'react';
 import LeftButton from './buttons/leftButton.jsx';
 import RightButton from './buttons/rightButton.jsx';
-import styles from '../styles.css';
+import styles from '../nearby.css';
 
 var Image = ({ restaurant, index, onLeftClick, onRightClick }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from './image.jsx';
 import Info from './info.jsx';
-import styles from '../styles.css';
+import styles from '../nearby.css';
 
 var Container = ({ restaurant, onLeftClick, onRightClick, index }) => {
   return (
