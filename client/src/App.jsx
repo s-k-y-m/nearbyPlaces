@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Container from './components/container.jsx';
 import data from '../../db/fakeData.js';
-import styles from './styles.css';
+import styles from './nearby.css';
 
 let fakeData = data.slice(0, 6);
 
