@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../styles.css';
 
 var LeftButton = ({ onLeftClick, restaurant }) => {
   return (
@@ -8,7 +9,7 @@ var LeftButton = ({ onLeftClick, restaurant }) => {
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
-      className="left-button"
+      className={styles.leftButton}
       onClick={() => {
         onLeftClick(restaurant);
       }}

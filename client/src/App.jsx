@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Container from './components/container.jsx';
 import data from '../../db/fakeData.js';
+import styles from './styles.css';
 
 let fakeData = data.slice(0, 6);
 
@@ -68,21 +69,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="start">
-        <div id="related-start">
-          <span id="original-restaurant">More Places Near Trou Normand</span>
+      <div className={styles.wholeApp}>
+        <div className={styles.start}>
+          <div className={styles.relatedStart}>
+            <span className={styles.originalRestaurant}>More Places Near Trou Normand</span>
+          </div>
+          {this.state.restaurants.map((restaurant, index) => {
+            return (
+              <Container
+                key={index}
+                restaurant={restaurant}
+                onLeftClick={this.leftClickHandler.bind(this)}
+                onRightClick={this.rightClickHandler.bind(this)}
+                index={this.state.index[index + 1]}
+              />
+            );
+          })}
         </div>
-        {this.state.restaurants.map((restaurant, index) => {
-          return (
-            <Container
-              key={index}
-              restaurant={restaurant}
-              onLeftClick={this.leftClickHandler.bind(this)}
-              onRightClick={this.rightClickHandler.bind(this)}
-              index={this.state.index[index + 1]}
-            />
-          );
-        })}
       </div>
     );
   }

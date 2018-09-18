@@ -14,6 +14,15 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
           babelrc: false
         }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.css$/,
+        loader:
+          'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
       }
     ]
   },
