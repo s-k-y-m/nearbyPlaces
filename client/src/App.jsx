@@ -10,6 +10,7 @@ let fakeData = data.slice(0, 6);
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.getData = this.getData.bind(this);
     this.state = {
       restaurants: fakeData,
       index: {
@@ -23,25 +24,33 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
+    this.getData();
+  }
+
+  getData() {
     var restaurant;
-    axios
-      .get('/nearby')
-      .then(response => {
-        restaurant = response.data;
-        this.setState({
-          restaurants: restaurant
+    let restArr = [];
+    let i = 1;
+    for (let i = 1; i < 7; i++) {
+      axios
+        .get(`/nearby/${i}`)
+        .then(response => {
+          restaurant = response.data;
+          restArr.push(restaurant);
+          this.setState({
+            restaurants: restArr
+          });
+        })
+        .catch(error => {
+          console.log(error);
         });
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    }
   }
 
   leftClickHandler(restaurant) {
     let length = restaurant.picture.length - 1;
-    let id = restaurant.id;
+    let id = this.state.restaurants.indexOf(restaurant) + 1;
     let currentImg = this.state.index;
-
     if (this.state.index[id] === 0) {
       currentImg[id] = length;
     } else {
@@ -54,7 +63,7 @@ class App extends React.Component {
 
   rightClickHandler(restaurant) {
     let length = restaurant.picture.length - 1;
-    let id = restaurant.id;
+    let id = this.state.restaurants.indexOf(restaurant) + 1;
     let currentImg = this.state.index;
 
     if (this.state.index[id] === length) {
@@ -72,6 +81,7 @@ class App extends React.Component {
       <div className={styles.wholeApp}>
         <div className={styles.start}>
           <div className={styles.relatedStart}>
+            {console.log(this.state.restaurants[0])}
             <span className={styles.originalRestaurant}>More Places Near Trou Normand</span>
           </div>
           {this.state.restaurants.map((restaurant, index) => {

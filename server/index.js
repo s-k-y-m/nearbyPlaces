@@ -9,16 +9,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
 console.log(__dirname);
-app.get('/nearby', function(req, res) {
-  nearby
-    .find()
-    .where('id')
-    .gt(0)
-    .lt(7)
-    .lean()
-    .exec(function(err, docs) {
-      res.json(docs);
-    });
+app.get('/nearby/:id', function(req, res) {
+  nearby.findOne({ id: req.params.id }).exec(function(err, docs) {
+    res.json(docs);
+  });
 });
 
 app.listen(3004, () => console.log('Example app listening on port 3004!'));
