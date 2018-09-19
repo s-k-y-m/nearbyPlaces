@@ -58,7 +58,7 @@ body {
 @media (min-width: 600px) {
   .relatedStart {
     border-top: 1px #101820 solid;
-    margin: 0 32px 25px 0;
+    margin: 10px 32px 25px 0;
     padding-top: 6px;
   }
 }
