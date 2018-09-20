@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
-console.log(__dirname);
 app.get('/nearby/:id', function(req, res) {
   nearby.findOne({ id: req.params.id }).exec(function(err, docs) {
     res.json(docs);
